@@ -16,6 +16,11 @@
         return <h1>Props: {title ? title : 'Default Title'}</h1>;
       }
       function HomePage() {
+        const [likes, setLikes] = React.useState(0);
+        function handleClick() {
+          setLikes(likes + 1);
+        }
+
         const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
         return (
           <div>
@@ -26,7 +31,7 @@
               ))}
             </ul>
       
-            <button>Like</button>
+            <button onClick={handleClick}>Likes ({likes})</button>
           </div>
         );
       }
